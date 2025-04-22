@@ -1,0 +1,287 @@
+/* Reset CSS jika diperlukan */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* Styling untuk header */
+header {
+    background-image: url('background-header.jpg');
+    background-size: cover;
+    padding: 50px 20px; /* Tambah padding atas bawah */
+    text-align: center;
+    border-bottom: 3px solid #ffdd57; /* Warna kuning cerah */
+    color: #3498db; /* Warna biru cerah */
+    position: relative;
+    /* background: linear-gradient(135deg, #a7d9ed, #e0f7fa); /* Contoh gradien lembut */
+}
+
+header h1 {
+    font-size: 3.5em; /* Sedikit lebih besar */
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #feca57; /* Tambah shadow cerah */
+}
+
+header p {
+    font-size: 1.3em;
+    color: #5dade2; /* Warna biru yang lebih lembut */
+    margin-bottom: 25px;
+}
+
+header .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #feca57; /* Warna kuning cerah */
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .btn:hover {
+    background-color: #ffda81; /* Sedikit lebih terang saat hover */
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling untuk container blog */
+.blog-container {
+    max-width: 1000px; /* Sedikit lebih lebar */
+    margin: 40px auto; /* Tambah margin atas bawah */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Tambah jarak antar artikel */
+}
+
+/* Styling untuk setiap artikel */
+.article-card {
+    background-color: #e0f2f7; /* Biru muda lembut */
+    border-radius: 12px; /* Lebih membulat */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bayangan lebih lembut */
+    margin-bottom: 0; /* Hapus margin bawah karena sudah ada gap di container */
+    padding: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #b3e5fc; /* Border tipis */
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.article-card .title {
+    font-size: 2.2em; /* Sedikit lebih besar */
+    color: #2979ff; /* Biru yang lebih kuat */
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.article-card .meta {
+    font-size: 1.1em;
+    color: #90a4ae; /* Abu-abu kebiruan */
+    margin-bottom: 18px;
+}
+
+.article-card .article-image {
+    width: 100%;
+    max-height: 400px; /* Kurangi sedikit tinggi max */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.article-card .content p {
+    font-size: 1.15em;
+    line-height: 1.7;
+    color: #546e7a; /* Abu-abu gelap kebiruan */
+    text-align: justify;
+    margin-bottom: 20px; /* Tambah margin bawah */
+}
+
+/* Tombol Selengkapnya */
+.more-btn {
+    background-color: #2979ff; /* Biru yang lebih kuat */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Padding lebih besar */
+    margin-left: 5px;
+    border-radius: 8px; /* Lebih membulat */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.more-btn:hover {
+    background-color: #1e88e5; /* Sedikit lebih gelap saat hover */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Fullscreen Artikel */
+.fullscreen-article {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Sedikit lebih transparan */
+    color: #333; /* Warna teks gelap */
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 30px;
+}
+
+.fullscreen-content {
+    background-color: #fff; /* Latar belakang putih */
+    color: #333;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    max-width: 900px; /* Lebar maksimum lebih besar */
+    margin: 60px auto; /* Margin atas bawah lebih besar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px; /* Lebih besar */
+    font-weight: bold;
+    color: #777;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.fullscreen-content h2 {
+    color: #2979ff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.fullscreen-content .meta {
+    color: #90a4ae;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.fullscreen-content .article-image {
+    width: 100%;
+    max-height: 600px;
+    object-fit: contain; /* Atau cover, sesuaikan */
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.fullscreen-content p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #546e7a;
+    margin-bottom: 20px;
+    text-align: left; /* Default text align */
+}
+
+/* Footer */
+footer {
+    background-color: #3498db; /* Biru cerah */
+    color: #fff;
+    text-align: center;
+    padding: 30px 0; /* Padding lebih besar */
+    font-size: 1.1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 15px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #feca57; /* Kuning cerah saat hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .blog-container {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .article-card {
+        padding: 20px;
+    }
+
+    .article-card .title {
+        font-size: 1.8em;
+    }
+
+    .article-card .content p {
+        font-size: 1em;
+    }
+
+    .fullscreen-content {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .fullscreen-content h2 {
+        font-size: 2em;
+    }
+
+    .fullscreen-content p {
+        font-size: 1.1em;
+    }
+
+}
+.action-btn {
+    background-color: #2979ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 5px 0 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:hover {
+    background-color: #1e88e5;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
